@@ -10,6 +10,14 @@ namespace ListsUnitTests
         {
         }
 
+        [Test]
+        public void DefaultConsructor_ShouldCreateEmptyList()
+        {
+            IList actualList = new MyArrayList();
+
+            CollectionAssert.AreEqual(new int[] { }, actualList);
+        }
+
         [TestCase(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 2, 3, 4, 5 })]
         public void ConstructorFromArray_WhenSourceArrayChanged_ShouldNotChangeList
             (int[] sourceArray, int[] expectedArray)
